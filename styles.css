@@ -1,0 +1,140 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('fondo.png') no-repeat center center fixed; /* Fijar y centrar el fondo */
+    background-size: cover; /* Cubrir todo el fondo sin repetir */
+    color: #ffffff;
+}
+
+.background {
+    position: absolute; /* Posición absoluta para cubrir todo el fondo */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+    backdrop-filter: blur(8px); /* Aplica el desenfoque al fondo */
+    z-index: 1; /* Asegura que esté detrás del formulario */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+    border-radius: 15px; /* Bordes más suaves */
+    padding: 30px; /* Más espacio interior */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative; /* Posicionamiento relativo para el contenedor */
+    z-index: 2; /* Asegura que esté encima del fondo */
+    animation: fadeIn 0.5s ease-in-out; /* Efecto de entrada del formulario */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza transparente */
+        transform: translateY(20px); /* Se mueve hacia abajo */
+    }
+    to {
+        opacity: 1; /* Termina visible */
+        transform: translateY(0); /* Se restaura su posición */
+    }
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 28px; /* Aumentar tamaño de fuente */
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #34495e;
+    font-size: 20px; /* Aumentar tamaño de fuente */
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #2980b9;
+    margin-top: 10px;
+    font-size: 22px; /* Aumentar tamaño de fuente */
+}
+
+.selector {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px; /* Aumentar tamaño de botón */
+    border-radius: 5px;
+    font-size: 18px; /* Aumentar tamaño de fuente */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Agregar efecto de transformación */
+    margin-top: 5px;
+    animation: buttonPop 0.3s ease-in-out; /* Efecto de entrada del botón */
+}
+
+@keyframes buttonPop {
+    from {
+        transform: scale(0.8); /* Comienza más pequeño */
+    }
+    to {
+        transform: scale(1); /* Termina en su tamaño original */
+    }
+}
+
+button:hover {
+    background-color: #1a5276;
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+label {
+    color: #555;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input {
+    padding: 12px; /* Aumentar espacio en el input */
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    transition: border 0.3s, box-shadow 0.3s; /* Transición suave para el borde y la sombra */
+}
+
+input:focus {
+    border: 1px solid #2980b9; /* Cambiar color de borde al enfocar */
+    outline: none; /* Quitar contorno por defecto */
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5); /* Añadir sombra en el input al enfocar */
+    transform: scale(1.02); /* Aumentar ligeramente el tamaño del input */
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 20px; /* Aumentar tamaño de fuente */
+    color: #2c3e50;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}

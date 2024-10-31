@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculos de distancia, velocidad y tiempo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cálculos de distancia, velocidad y tiempo</h1>
+        <div class="selector">
+            <h2>Seleccione qué desea calcular:</h2>
+            <button onclick="showForm('distance')">Distancia (NM/KM)</button>
+            <button onclick="showForm('time')">Tiempo (hr/min)</button>
+            <button onclick="showForm('speed')">Velocidad (kt/km/h)</button>
+        </div>
+
+        <!-- Formulario para la distancia -->
+        <div id="distanceForm" class="form" style="display:none;">
+            <h3>Calcular Distancia</h3>
+            <div>
+                <button onclick="setDistanceUnit('NM')">Millas Náuticas</button>
+                <button onclick="setDistanceUnit('KM')">Kilómetros</button>
+            </div>
+            <label for="speedDistance">Velocidad (kt/km/h):</label>
+            <input type="number" id="speedDistance" placeholder="Ingrese la velocidad">
+
+            <label for="timeDistance">Tiempo (hr/min):</label>
+            <input type="number" id="timeDistance" placeholder="Ingrese el tiempo">
+
+            <button onclick="calculateDistance()">Calcular Distancia</button>
+        </div>
+
+        <!-- Formulario para el tiempo -->
+        <div id="timeForm" class="form" style="display:none;">
+            <h3>Calcular Tiempo</h3>
+            <div>
+                <button onclick="setTimeUnit('hr')">Horas</button>
+                <button onclick="setTimeUnit('min')">Minutos</button>
+            </div>
+            <label for="distanceTime">Distancia (NM/KM):</label>
+            <input type="number" id="distanceTime" placeholder="Ingrese la distancia">
+
+            <label for="speedTime">Velocidad (kt/km/h):</label>
+            <input type="number" id="speedTime" placeholder="Ingrese la velocidad">
+
+            <button onclick="calculateTime()">Calcular Tiempo</button>
+        </div>
+
+        <!-- Formulario para la velocidad -->
+        <div id="speedForm" class="form" style="display:none;">
+            <h3>Calcular Velocidad</h3>
+            <div>
+                <button onclick="setSpeedUnit('kt')">Nudos</button>
+                <button onclick="setSpeedUnit('km/h')">Kilómetros por hora</button>
+            </div>
+            <label for="distanceSpeed">Distancia (NM/KM):</label>
+            <input type="number" id="distanceSpeed" placeholder="Ingrese la distancia">
+
+            <label for="timeSpeed">Tiempo (hr/min):</label>
+            <input type="number" id="timeSpeed" placeholder="Ingrese el tiempo">
+
+            <button onclick="calculateSpeed()">Calcular Velocidad</button>
+        </div>
+
+        <p id="result">Resultado: --</p>
+        <button onclick="resetCalculations()">Reiniciar Cálculos</button>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
